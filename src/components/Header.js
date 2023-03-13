@@ -1,10 +1,12 @@
 import React from 'react'
 import Navigation from "./Navbar";
 import planetImage from "../assets/planet1.png"
+import styles from "../styling/Header.modules.css"
 const Header = () => {
     return ( 
         <header>
-        <div className="">
+        <div className={styles.navHeader}>
+        <div className={styles.logoSection}>
         <img
         src={planetImage}
         alt="logo"
@@ -13,7 +15,7 @@ const Header = () => {
         width="50"
         />
         <h2>Space Travelers Hub</h2>
-     
+        </div>
         <Navigation />
         </div>
         <hr />
