@@ -1,16 +1,21 @@
 import React from 'react';
+import Header from './Header';
 import { NavLink, Outlet } from 'react-router-dom';
+import styles from '../styling/NavBar.module.css';
 
 const Navigation = () => (
-  <header>
-    <h1>Space Travelers Hub</h1>
-    <nav>
-      <NavLink to="/">Rockets</NavLink>
-      <NavLink to="/missions">Missions</NavLink>
-      <NavLink to="/myprofile"> | My Profile</NavLink>
-    </nav>
-    <Outlet />
-  </header>
+  <div>
+  <Header />
+  <nav className={styles.navLinks}>
+  <NavLink to="/">Rockets</NavLink>
+  <NavLink to="/missions">Missions</NavLink>
+  <NavLink to="/myprofile"> | My Profile</NavLink>
+</nav>
+<Outlet />
+</div>
+
+   
+ 
 );
 
 export default Navigation;
