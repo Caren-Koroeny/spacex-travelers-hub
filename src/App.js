@@ -8,12 +8,12 @@ import Navigation from './components/Navbar';
 function App() {
   return (
     <BrowserRouter>
-    <Navigation />
-    <Routes>
-    <Route path="/" element={<Rockets />} />
-    <Route path="/missions" element={<Mission />} />
-    <Route path="/myprofile" element={<Profile />} />
-    </Routes>
+      <Navigation />
+      <Routes>
+        <Route path="/" element={<Rockets />} />
+        <Route path="/missions" element={<Mission />} />
+        <Route path="/myprofile" element={<Profile />} />
+      </Routes>
     </BrowserRouter>
   );
 }
