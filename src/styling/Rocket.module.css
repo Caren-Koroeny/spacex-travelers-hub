@@ -1,3 +1,33 @@
 .image {
   width: 9rem;
 }
+
+.container {
+  display: flex;
+  column-gap: 2rem;
+}
+
+li {
+  list-style-type: none;
+}
+
+.reserve {
+  background-color: rgb(87, 87, 216);
+  padding: 0.5rem;
+  border-radius: 5px;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.item {
+  padding-bottom: 1rem;
+  margin: 0;
+}
+
+.head {
+  font-size: 300px;
+}
+
+p {
+  font-size: 1.2rem;
+}

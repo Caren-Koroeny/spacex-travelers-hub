@@ -17,10 +17,13 @@ const Rockets = () => {
   return (
     <>
       {rockets.map((rocket) => (
-        <ul key={rocket.id}>
+        <ul key={rocket.id} className={styling.container}>
           <img src={rocket.flickr_images} alt="rocket" className={styling.image} />
-          <li>{rocket.name}</li>
-          <li>{rocket.description}</li>
+          <div className={styling.contain}>
+            <p className={styling.item}>{rocket.name}</p>
+            <li className={styling.item}>{rocket.description}</li>
+            <button type="button" className={styling.reserve}>Reserve Rocket</button>
+          </div>
         </ul>
       ))}
     </>
