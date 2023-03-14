@@ -12,6 +12,12 @@
     ". . status2";
 }
 
+.missionItems div {
+  text-align: left;
+  border: 1px solid rgb(229, 227, 227);
+  padding-left: 0.5rem;
+}
+
 .headers div {
   height: 2rem;
   text-align: left;
@@ -47,12 +53,6 @@
 
 .missionItems:nth-child(odd) {
   background-color: rgb(229, 227, 227, 0.5);
-}
-
-.missionItems div {
-  text-align: left;
-  border: 1px solid rgb(229, 227, 227);
-  padding-left: 0.5rem;
 }
 
 .missionInfo {
