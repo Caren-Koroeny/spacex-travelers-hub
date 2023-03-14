@@ -1,0 +1,66 @@
+.logo {
+  width: 60px;
+}
+
+.logoSection {
+  display: flex;
+  column-gap: 1rem;
+}
+
+hr {
+  width: 95%;
+}
+
+.headerSection {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.navLinks {
+  display: flex;
+  column-gap: 1rem;
+  padding-top: 1.5rem;
+  padding-right: 2.5rem;
+  justify-content: space-between;
+  align-items: center;
+}
+
+a {
+  text-decoration: none;
+  position: relative;
+  display: block;
+  padding: 1px 0;
+  margin: 0 12px;
+  letter-spacing: 1px;
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 900;
+  text-transform: uppercase;
+  transition: color 0.1s, background-color 0.1s, padding 0.2s ease-in;
+  color: #000;
+}
+
+a::before {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: 1px;
+  left: 0;
+  height: 3px;
+  width: 100%;
+  background-color: #6495ed;
+  transform-origin: right top;
+  transform: scale(0, 1);
+  transition: color 0.1s, transform 0.2s ease-out;
+}
+
+a:active::before {
+  background-color: #000;
+}
+
+a:hover::before,
+a:focus::before {
+  transform-origin: left top;
+  transform: scale(1, 1);
+}
