@@ -2,36 +2,51 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-const baseUrl = 'https://api.spacexdata.com/v3/missions';
+const BASE_URL = 'https://api.spacexdata.com/v3/missions';
 
-export const getMission = createAsyncThunk('missions/getMissions', async () => {
-  const response = await axios(baseUrl);
-  return response.data;
+export const fetchMissions = createAsyncThunk('missions/fetchMissions', async () => {
+  const response = await axios(BASE_URL);
+  const missions = response.data.map((mission) => ({ ...mission, reserved: false }));
+  return missions;
 });
 
 const initialState = {
-  mission: [],
+  missions: [],
   status: 'idle',
   error: null,
+  reserved: []
 };
 
-const missionSlice = createSlice({
+const missionsSlice = createSlice({
   name: 'missions',
   initialState,
-  reducers: {},
+  reducers: {
+    toggleReservation: (state, action) => {
+      const mission = state.missions.find((mission) => mission.mission_id === action.payload);
+      if (mission) {
+        mission.reserved = !mission.reserved;
+      }
+    }
+  },
   extraReducers: (builder) => {
     builder
-      .addCase(getMission.fulfilled, (state, action) => {
-        state.mission = action.payload;
-        state.status = 'approved';
-      })
-      .addCase(getMission.pending, (state) => {
+      .addCase(fetchMissions.pending, (state) => {
         state.status = 'loading';
       })
-      .addCase(getMission.rejected, (state, action) => {
-        state.status = ' failed';
+      .addCase(fetchMissions.fulfilled, (state, action) => {
+        state.status = 'succeeded';
+        state.missions = action.payload;
+      })
+      .addCase(fetchMissions.rejected, (state, action) => {
+        state.status = 'failed';
         state.error = action.error.message;
       });
-  },
+  }
 });
-export default missionSlice.reducer;
+
+export const { toggleReservation } = missionsSlice.actions;
+export const selectMissions = (state) => state.missions.missions;
+export const selectMissionsStatus = (state) => state.missions.status;
+export const selectMissionsError = (state) => state.missions.error;
+export const selectReservedMissions = (state) => state.missions.missions.filter((mission) => mission.reserved);
+export default missionsSlice.reducer;
