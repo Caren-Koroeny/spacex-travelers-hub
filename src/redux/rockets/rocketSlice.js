@@ -40,7 +40,8 @@ export const rocketSlice = createSlice({
       ...state,
       status: 'loading',
     }))
-      .addCase(fetchRocketData.fulfilled, (statte, action) => ({
+      .addCase(fetchRocketData.fulfilled, (state, action) => ({
+        ...state,
         rocketListData: action.payload.map((rocketData) => ({
           id: rocketData.id,
           name: rocketData.name,
