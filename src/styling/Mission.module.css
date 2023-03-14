@@ -1,0 +1,8 @@
+.missionContainer {
+    border: 1px solid black;
+}
+
+.headers div{
+    display: flex;
+    flex-direction: column;
+}
