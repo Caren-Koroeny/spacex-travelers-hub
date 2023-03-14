@@ -51,7 +51,7 @@ a::before {
   left: 0;
   height: 3px;
   width: 100%;
-  background-color: #000;
+  background-color: 	#6495ED;
   transform-origin: right top;
   transform: scale(0, 1);
   transition: color 0.1s,transform 0.2s ease-out;
