@@ -11,33 +11,36 @@ const Navigation = () => (
         <h1>Space Travelers Hub</h1>
       </section>
       <nav className={styles.navLinks}>
-        <NavLink to="/"
-        style={({ isActive }) => ({
-          color: isActive ? '	#6495ED' : 'none',
-          fontWeight: isActive ? '700' : 'regular',
-          textDecoration: isActive ? 'underline': 'none',
-        })}
+        <NavLink
+          to="/"
+          style={({ isActive }) => ({
+            color: isActive ? '#6495ED' : 'none',
+            fontWeight: isActive ? '700' : 'regular',
+            textDecoration: isActive ? 'underline' : 'none',
+          })}
         >
-        Rockets
+          Rockets
         </NavLink>
-        <NavLink to="/missions"
-        style={({ isActive }) => ({
-          color: isActive ? '	#6495ED' : 'none',
-          fontWeight: isActive ? '700' : 'regular',
-          fontSize: isActive ? 'underline': 'none',
-        })}
+        <NavLink
+          to="/missions"
+          style={({ isActive }) => ({
+            color: isActive ? '#6495ED' : 'none',
+            fontWeight: isActive ? '700' : 'regular',
+            fontSize: isActive ? 'underline' : 'none',
+          })}
         >
-        Missions
+          Missions
         </NavLink>
         <div>|</div>
-        <NavLink to="/myprofile"
-        style={({ isActive }) => ({
-          color: isActive ? '	#6495ED' : 'none',
-          fontWeight: isActive ? '700' : 'regular',
-          fontSize: isActive ? 'underline': 'none',
-        })}
-        >  
-        My Profile
+        <NavLink
+          to="/myprofile"
+          style={({ isActive }) => ({
+            color: isActive ? '#6495ED' : 'none',
+            fontWeight: isActive ? '700' : 'regular',
+            fontSize: isActive ? 'underline' : 'none',
+          })}
+        >
+          My Profile
         </NavLink>
       </nav>
     </header>
