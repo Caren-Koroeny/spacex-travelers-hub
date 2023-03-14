@@ -11,10 +11,34 @@ const Navigation = () => (
         <h1>Space Travelers Hub</h1>
       </section>
       <nav className={styles.navLinks}>
-        <NavLink to="/">Rockets</NavLink>
-        <NavLink to="/missions">Missions</NavLink>
+        <NavLink to="/"
+        style={({ isActive }) => ({
+          color: isActive ? '	#6495ED' : 'none',
+          fontWeight: isActive ? '700' : 'regular',
+          textDecoration: isActive ? 'underline': 'none',
+        })}
+        >
+        Rockets
+        </NavLink>
+        <NavLink to="/missions"
+        style={({ isActive }) => ({
+          color: isActive ? '	#6495ED' : 'none',
+          fontWeight: isActive ? '700' : 'regular',
+          fontSize: isActive ? 'underline': 'none',
+        })}
+        >
+        Missions
+        </NavLink>
         <div>|</div>
-        <NavLink to="/myprofile">  My Profile</NavLink>
+        <NavLink to="/myprofile"
+        style={({ isActive }) => ({
+          color: isActive ? '	#6495ED' : 'none',
+          fontWeight: isActive ? '700' : 'regular',
+          fontSize: isActive ? 'underline': 'none',
+        })}
+        >  
+        My Profile
+        </NavLink>
       </nav>
     </header>
     <hr />
