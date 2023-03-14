@@ -38,7 +38,7 @@ a {
   font-weight: 900;
   text-transform: uppercase;
   transition: color 0.1s, background-color 0.1s, padding 0.2s ease-in;
-  color: #000;
+  color: #6495ed;
 }
 
 a::before {

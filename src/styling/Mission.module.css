@@ -1,0 +1,40 @@
+.missionContainer {
+  padding: 1rem 1rem 0 1rem;
+}
+
+/* Define the grid layout */
+.headers {
+  padding: 10px;
+  display: grid;
+  grid-template-columns: 1fr 4fr 1fr 1.2fr;
+  grid-template-areas:
+    "mission description status1"
+    ". . status2";
+}
+
+.headers div {
+  height: 2rem;
+  text-align: left;
+  border: 1px solid rgb(229, 227, 227);
+  padding-left: 0.5rem;
+}
+
+/* Assign grid areas to each header */
+.headers > div:nth-child(1) {
+  grid-area: mission;
+}
+
+.headers > div:nth-child(2) {
+  grid-area: description;
+}
+
+.headers > div:nth-child(3) {
+  grid-area: status1;
+}
+
+/* Style the headers */
+.headers h2 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 0;
+}
