@@ -33,7 +33,7 @@ a {
 a {
   position: relative;
   display: block;
-  padding: 16px 0;
+  padding: 1px 0;
   margin: 0 12px;
   letter-spacing: 1px;
   font-size: 12px;
@@ -47,7 +47,7 @@ a::before {
   content: '';
   display: block;
   position: absolute;
-  bottom: 3px;
+  bottom: 1px;
   left: 0;
   height: 3px;
   width: 100%;
