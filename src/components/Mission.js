@@ -1,17 +1,21 @@
 import React from 'react';
 import styles from '../styling/Mission.module.css';
 
-const Mission = () => {
-  return (
-    <section className={styles.missionContainer} >
+const Mission = () => (
+  <section className={styles.missionContainer}>
     <div className={styles.headers}>
-    <h2>Mission</h2>
-    <h2>Description</h2>
-    <h2>Status</h2>
+      <div>
+        <h2>Mission</h2>
+      </div>
+      <div>
+        <h2>Description</h2>
+      </div>
+      <div>
+        <h2>Status</h2>
+      </div>
+      <div />
     </div>
-    
-    </section>
-  )
-  };
+  </section>
+);
 
 export default Mission;
