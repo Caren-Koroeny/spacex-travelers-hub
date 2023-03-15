@@ -49,13 +49,15 @@ const Mission = () => {
         )}
         </div>
         <div className={styles.buttons}>
-          <button
-            type="button"
-            className={
-                styles.joinMissionBtn
-            }
-            
-          >
+        <button
+        type="button"
+        className={
+          item.reserved
+            ? styles.leaveMissionBtn
+            : styles.joinMissionBtn
+        }
+        onClick={() => joinedMissionhandler(item.mission_id)}
+      >
             {displayJoinMission(item.reserved)}
           </button>
         </div>
