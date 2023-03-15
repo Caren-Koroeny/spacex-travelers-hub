@@ -1,5 +1,15 @@
 .logo {
-  width: 60px;
+  width: 70px;
+  animation: bounce 1s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
 .logoSection {
