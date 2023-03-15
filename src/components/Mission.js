@@ -32,21 +32,21 @@ const Mission = () => {
           <p>{item.description}</p>
         </div>
         <div className={styles.buttons}>
-          
-            <button
-              type="button"
-              className={styles.activeMemberBtn}
-            >
-              Active Member
-            </button>
-         
-            <button
-              type="button"
-              className={styles.notActivememberBtn}
-            >
-              NOT A MEMBER
-            </button>
-        
+        {item.reserved ? (
+          <button
+            type="button"
+            className={styles.activeMemberBtn}
+          >
+            Active Member
+          </button>
+        ) : (
+          <button
+            type="button"
+            className={styles.notActivememberBtn}
+          >
+            NOT A MEMBER
+          </button>
+        )}
         </div>
         <div className={styles.buttons}>
           <button
