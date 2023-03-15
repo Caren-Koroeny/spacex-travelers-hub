@@ -29,7 +29,7 @@ const missionSlice = createSlice({
         state.status = 'loading';
       })
       .addCase(getMission.rejected, (state, action) => {
-        state.status = ' failed';
+        state.status = 'failed';
         state.error = action.error.message;
       });
   },
