@@ -15,23 +15,22 @@ const Mission = () => {
     true: 'Leave Mission',
     false: 'Join Mission',
   };
-  
+
   function displayJoinMission(status) {
     return joinMissionText[status];
   }
 
   const joinedMissionhandler = (id) => dispatch(joinMission(id));
- 
-  const renderMissionItems = () =>
-    mission.map((item) => (
-      <div className={styles.missionItems} key={item.mission_id}>
-        <div className={styles.missionHead}>
-          <h3>{item.mission_name}</h3>
-        </div>
-        <div className={styles.missionInfo}>
-          <p>{item.description}</p>
-        </div>
-        <div className={styles.buttons}>
+
+  const renderMissionItems = () => mission.map((item) => (
+    <div className={styles.missionItems} key={item.mission_id}>
+      <div className={styles.missionHead}>
+        <h3>{item.mission_name}</h3>
+      </div>
+      <div className={styles.missionInfo}>
+        <p>{item.description}</p>
+      </div>
+      <div className={styles.buttons}>
         {item.reserved ? (
           <button
             type="button"
@@ -47,22 +46,22 @@ const Mission = () => {
             NOT A MEMBER
           </button>
         )}
-        </div>
-        <div className={styles.buttons}>
+      </div>
+      <div className={styles.buttons}>
         <button
-        type="button"
-        className={
+          type="button"
+          className={
           item.reserved
             ? styles.leaveMissionBtn
             : styles.joinMissionBtn
         }
-        onClick={() => joinedMissionhandler(item.mission_id)}
-      >
-            {displayJoinMission(item.reserved)}
-          </button>
-        </div>
+          onClick={() => joinedMissionhandler(item.mission_id)}
+        >
+          {displayJoinMission(item.reserved)}
+        </button>
       </div>
-    ));
+    </div>
+  ));
 
   return (
     <section className={styles.missionContainer}>
