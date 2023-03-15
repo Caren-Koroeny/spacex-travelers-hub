@@ -19,6 +19,8 @@ const Mission = () => {
   function displayJoinMission(status) {
     return joinMissionText[status];
   }
+
+  const joinedMissionhandler = (id) => dispatch(joinMission(id));
  
   const renderMissionItems = () =>
     mission.map((item) => (
