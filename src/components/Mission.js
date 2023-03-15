@@ -11,54 +11,52 @@ const Mission = () => {
     dispatch(getMission());
   }, [dispatch]);
 
-
   function displayJoinMission(currentStatus) {
     return currentStatus ? 'Leave Mission' : 'Join Mission';
   }
 
   const missionHandler = (id) => dispatch(joinMission(id));
 
-  const renderMissionItems = () =>
-    mission.map((item) => (
-      <div className={styles.missionItems} key={item.mission_id}>
-        <div className={styles.missionHead}>
-          <h3>{item.mission_name}</h3>
-        </div>
-        <div className={styles.missionInfo}>
-          <p>{item.description}</p>
-        </div>
-        <div className={styles.buttons}>
-          {item.reserved ? (
-            <button
-              type="button"
-              className={styles.activeMemberBtn}
-            >
-              Active Member
-            </button>
-          ) : (
-            <button
-              type="button"
-              className={styles.notActivememberBtn}
-            >
-              NOT A MEMBER
-            </button>
-          )}
-        </div>
-        <div className={styles.buttons}>
+  const renderMissionItems = () => mission.map((item) => (
+    <div className={styles.missionItems} key={item.mission_id}>
+      <div className={styles.missionHead}>
+        <h3>{item.mission_name}</h3>
+      </div>
+      <div className={styles.missionInfo}>
+        <p>{item.description}</p>
+      </div>
+      <div className={styles.buttons}>
+        {item.reserved ? (
           <button
             type="button"
-            className={
+            className={styles.activeMemberBtn}
+          >
+            Active Member
+          </button>
+        ) : (
+          <button
+            type="button"
+            className={styles.notActivememberBtn}
+          >
+            NOT A MEMBER
+          </button>
+        )}
+      </div>
+      <div className={styles.buttons}>
+        <button
+          type="button"
+          className={
               item.reserved
                 ? styles.leaveMissionBtn
                 : styles.joinMissionBtn
             }
-            onClick={() => missionHandler(item.mission_id)}
-          >
-            {displayJoinMission(item.reserved)}
-          </button>
-        </div>
+          onClick={() => missionHandler(item.mission_id)}
+        >
+          {displayJoinMission(item.reserved)}
+        </button>
       </div>
-    ));
+    </div>
+  ));
 
   return (
     <section className={styles.missionContainer}>
