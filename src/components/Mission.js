@@ -1,15 +1,11 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import styles from '../styling/Mission.module.css';
-import { getMission, joinMission } from '../redux/mission/missionSlice';
+import { joinMission } from '../redux/mission/missionSlice';
 
 const Mission = () => {
   const { mission } = useSelector((store) => store.missions);
   const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(getMission());
-  }, [dispatch]);
 
   function displayJoinMission(currentStatus) {
     return currentStatus ? 'Leave Mission' : 'Join Mission';
