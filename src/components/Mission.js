@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import styles from '../styling/Mission.module.css';
-import { getMission } from '../redux/mission/missionSlice';
+import { getMission, joinMission } from '../redux/mission/missionSlice';
 
 const Mission = () => {
   const { mission } = useSelector((store) => store.missions);
@@ -11,32 +11,54 @@ const Mission = () => {
     dispatch(getMission());
   }, [dispatch]);
 
-  const renderMissionItems = () => mission.map((item) => (
-    <div className={styles.missionItems} key={item.mission_id}>
-      <div className={styles.missionHead}>
-        <h3>{item.mission_name}</h3>
+  const joinMissionText = {
+    true: 'Leave Mission',
+    false: 'Join Mission',
+  };
+  
+  function displayJoinMission(status) {
+    return joinMissionText[status];
+  }
+ 
+  const renderMissionItems = () =>
+    mission.map((item) => (
+      <div className={styles.missionItems} key={item.mission_id}>
+        <div className={styles.missionHead}>
+          <h3>{item.mission_name}</h3>
+        </div>
+        <div className={styles.missionInfo}>
+          <p>{item.description}</p>
+        </div>
+        <div className={styles.buttons}>
+          
+            <button
+              type="button"
+              className={styles.activeMemberBtn}
+            >
+              Active Member
+            </button>
+         
+            <button
+              type="button"
+              className={styles.notActivememberBtn}
+            >
+              NOT A MEMBER
+            </button>
+        
+        </div>
+        <div className={styles.buttons}>
+          <button
+            type="button"
+            className={
+                styles.joinMissionBtn
+            }
+            
+          >
+            {displayJoinMission(item.reserved)}
+          </button>
+        </div>
       </div>
-      <div className={styles.missionInfo}>
-        <p>{item.description}</p>
-      </div>
-      <div className={styles.buttons}>
-        <button
-          type="button"
-          className={styles.memberBtn}
-        >
-          NOT A MEMBER
-        </button>
-      </div>
-      <div className={styles.buttons}>
-        <button
-          type="button"
-          className={styles.joinMissionBtn}
-        >
-          Join Mission
-        </button>
-      </div>
-    </div>
-  ));
+    ));
 
   return (
     <section className={styles.missionContainer}>
