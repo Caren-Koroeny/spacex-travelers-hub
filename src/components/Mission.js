@@ -36,7 +36,7 @@ const Mission = () => {
         ) : (
           <button
             type="button"
-            className={styles.notActivememberBtn}
+            className={styles.notActiveMemberBtn}
           >
             NOT A MEMBER
           </button>
