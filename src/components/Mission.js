@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import styles from '../styling/Mission.module.css';
-import { getMission } from '../redux/mission/missionSlice';
+import { getMission, joinMission } from '../redux/mission/missionSlice';
 
 const Mission = () => {
   const { mission } = useSelector((store) => store.missions);
@@ -10,6 +10,12 @@ const Mission = () => {
   useEffect(() => {
     dispatch(getMission());
   }, [dispatch]);
+
+  function displayJoinMission(currentStatus) {
+    return currentStatus ? 'Leave Mission' : 'Join Mission';
+  }
+
+  const missionHandler = (id) => dispatch(joinMission(id));
 
   const renderMissionItems = () => mission.map((item) => (
     <div className={styles.missionItems} key={item.mission_id}>
@@ -20,19 +26,33 @@ const Mission = () => {
         <p>{item.description}</p>
       </div>
       <div className={styles.buttons}>
-        <button
-          type="button"
-          className={styles.memberBtn}
-        >
-          NOT A MEMBER
-        </button>
+        {item.reserved ? (
+          <button
+            type="button"
+            className={styles.activeMemberBtn}
+          >
+            Active Member
+          </button>
+        ) : (
+          <button
+            type="button"
+            className={styles.notActiveMemberBtn}
+          >
+            NOT A MEMBER
+          </button>
+        )}
       </div>
       <div className={styles.buttons}>
         <button
           type="button"
-          className={styles.joinMissionBtn}
+          className={
+              item.reserved
+                ? styles.leaveMissionBtn
+                : styles.joinMissionBtn
+            }
+          onClick={() => missionHandler(item.mission_id)}
         >
-          Join Mission
+          {displayJoinMission(item.reserved)}
         </button>
       </div>
     </div>
