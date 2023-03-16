@@ -4,7 +4,7 @@ import { render } from '@testing-library/react';
 import store from '../redux/store';
 import Profile from '../components/Profile';
 
-describe('Display Profile Components', () => {
+describe('Display profile components', () => {
   it('Should display Profile items', () => {
     const container = render(
       <Provider store={store}>
