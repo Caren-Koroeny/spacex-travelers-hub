@@ -29,7 +29,17 @@ const missionSlice = createSlice({
         joinedMission.reserved = !joinedMission.reserved;
       }
     },
+
+    reservedMission: (state) => {
+      const missions = state.mission.filter(
+        (missions) => missions.reserved === true,
+      );
+      return { ...state, reserved:missions}
+    },
   },
+  
+  
+   
   extraReducers: (builder) => {
     builder
       .addCase(getMission.fulfilled, (state, action) => {
