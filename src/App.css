@@ -1,54 +1,34 @@
-
 .container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  border: solid rgb(105, 101, 101) 1px;
 }
 
 .profileContainer {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 90%;
-  margin-top: 20px;
-  gap: 30px;
+  gap: 3rem;
+  border: solid rgb(166, 166, 168) 1px;
 }
 
 .myMissions {
-  flex: 1;
-}
-
-.myRockets {
-  flex: 1;
-}
-
-.profileCard {
   display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  padding-left: 20px;
-  border: solid 1px #999;
-  width: 90%;
-  height: 50px;
-  font-weight: bold;
+  flex-direction: column;
 }
 
 .cardsContainer {
-  border: 1px solid grey;
-  border-collapse: collapse;
+  display: grid; /* use grid layout */
+  grid-template-columns: repeat(2, 1fr); /* display in two columns */
+  gap: 1rem;
+}
+
+.cardsContainer ul {
+  list-style: none;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1.2rem;
   font-weight: 400;
 }
 
-.cardsContainer  {
-  border: 1px solid grey;
-  border-radius: 10px;
-  padding: 1rem 8rem;
-  margin: 0.5rem 0;
-}
-
 .cardsContainer li {
-  display: table-row;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 1rem 2rem; /* decrease padding to fit in two columns */
+  margin: 0.5rem 0;
 }
