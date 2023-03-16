@@ -4,7 +4,7 @@ import { render } from '@testing-library/react';
 import store from '../redux/store';
 import Mission from '../components/Mission';
 
-describe('Display Mission Components', () => {
+describe('Display mission components', () => {
   it('Should display Mission items', () => {
     const container = render(
       <Provider store={store}>
