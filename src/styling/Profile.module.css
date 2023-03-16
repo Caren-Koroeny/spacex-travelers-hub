@@ -1,0 +1,23 @@
+.container {
+  display: flex;
+  justify-content: center;
+  column-gap: 15rem;
+}
+
+.listing {
+  padding: 2rem;
+  border: 1px solid black;
+  width: 30rem;
+  border-radius: 5px;
+  font-size: 20px;
+  margin-bottom: 0;
+}
+
+.list {
+  padding: 2rem;
+  border: 1px solid black;
+  width: 30rem;
+  border-radius: 5px;
+  font-size: 20px;
+  font-weight: 600;
+}

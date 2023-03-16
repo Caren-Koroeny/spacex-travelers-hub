@@ -22,6 +22,7 @@ const Rockets = () => {
         <ul key={rocket.id} className={styling.container}>
           <img src={rocket.flickr_images} alt="rocket" className={styling.image} />
           <div className={styling.contain}>
+            <p className={styling.item}>{rocket.name}</p>
             <p>
               <Badge bg={rocket.reserved ? ('info') : ('secondary')}>
                 {rocket.reserved ? ('Reserved') : ('')}

@@ -22,6 +22,7 @@ li {
 .item {
   padding-bottom: 1rem;
   margin: 0;
+  font-weight: 700;
 }
 
 .head {
