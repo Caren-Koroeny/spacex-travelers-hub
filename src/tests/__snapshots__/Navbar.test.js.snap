@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Navigation component should render Header component 1`] = `
+<div>
+  <header
+    class="headerSection"
+  >
+    <section
+      class="logoSection"
+    >
+      <img
+        alt="logo"
+        class="logo"
+        src="planet1.png"
+      />
+      <h1>
+        Space Travelers Hub
+      </h1>
+    </section>
+    <nav
+      class="navLinks"
+    >
+      <a
+        aria-current="page"
+        class="active"
+        href="/"
+        style="color: rgb(100, 149, 237); font-weight: 700; text-decoration: underline;"
+      >
+        Rockets
+      </a>
+      <a
+        class=""
+        href="/missions"
+        style="font-weight: regular;"
+      >
+        Missions
+      </a>
+      <div>
+        |
+      </div>
+      <a
+        class=""
+        href="/myprofile"
+        style="font-weight: regular;"
+      >
+        My Profile
+      </a>
+    </nav>
+  </header>
+  <hr />
+</div>
+`;
