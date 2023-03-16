@@ -31,21 +31,15 @@
 - API
 - Webpack
 - Linters
-- Webpack, big.js, jest, Git and Babel.
+- Webpack, jest, Git and Babel.
 
 <!-- Features -->
 ### Key Features <a name="key-features"></a>
 
-- `Add a new book` allowing you to specify a book's:
-
-    `Author`
-
-    `Title`
-
-    `Genre`
-
-- `Remove a specific` book from the list**
-
+-  Reserve rocket
+-  Join mission
+-  Cancel reservation of rockets
+-  Leave mission
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -120,6 +114,12 @@ npm run deploy
 - Twitter: [@carensiya](https://twitter.com/home)
 - LinkedIn: [CarenSiya](www.linkedin.com/in/caren-siya-a89712180)
 
+👤 **Shaaibu Suleiman**
+- GitHub: [@githubhandle](https://github.com/shaaibu7)
+- Twitter: [@twitterhandle](https://twitter.com/SuleimanShaaibu?t=EAqVJrP59poEb2W46kK9vg&s=09)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/shaaibu-suleiman-119271206)
+
+
 <!-- Features -->
 ## 🔭 Future Features <a name="future-features"></a>
 
@@ -156,6 +156,6 @@ If you like this project, please don't forget to follow me and give it a star.
 
 ## 📝 License <a name="license"></a>
 
-This project is [MIT](./LICENSE) licensed.
+This project is [MIT](./MIT.md) licensed.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
