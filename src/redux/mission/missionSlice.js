@@ -34,12 +34,10 @@ const missionSlice = createSlice({
       const missions = state.mission.filter(
         (missions) => missions.reserved === true,
       );
-      return { ...state, reserved:missions}
+      return { ...state, reserved: missions };
     },
   },
-  
-  
-   
+
   extraReducers: (builder) => {
     builder
       .addCase(getMission.fulfilled, (state, action) => {
@@ -56,5 +54,5 @@ const missionSlice = createSlice({
   },
 });
 
-export const { joinMission } = missionSlice.actions;
+export const { joinMission, reservedMission } = missionSlice.actions;
 export default missionSlice.reducer;
