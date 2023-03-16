@@ -1,39 +1,34 @@
-.App {
-  text-align: center;
+.container {
+  border: solid rgb(105, 101, 101) 1px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.profileContainer {
+  display: flex;
+  gap: 3rem;
+  border: solid rgb(166, 166, 168) 1px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.myMissions {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.cardsContainer {
+  display: grid; /* use grid layout */
+  grid-template-columns: repeat(2, 1fr); /* display in two columns */
+  gap: 1rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
+.cardsContainer ul {
+  list-style: none;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.2rem;
+  font-weight: 400;
+}
 
-  to {
-    transform: rotate(360deg);
-  }
+.cardsContainer li {
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 1rem 2rem; /* decrease padding to fit in two columns */
+  margin: 0.5rem 0;
 }
