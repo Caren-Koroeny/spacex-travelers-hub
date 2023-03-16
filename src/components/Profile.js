@@ -1,10 +1,12 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { reservedMission } from '../redux/mission/missionSlice';
+import styling from '../styling/Profile.module.css';
 
 const Profile = () => {
   const dispatch = useDispatch();
   const bookedMission = useSelector((store) => store.missions.reserved);
+  const bookedRocket = useSelector((state) => state.rockets.rocketListData);
 
   useEffect(() => {
     dispatch(reservedMission());
@@ -14,23 +16,36 @@ const Profile = () => {
 
   if (bookedMission.length) {
     displayMission = bookedMission.map((data) => (
-      <li key={data.mission_id}>
+      <li key={data.mission_id} className={styling.list}>
         <span>{data.mission_name}</span>
       </li>
     ));
   }
+
   return (
-    <div className="container">
-      <div className="profileContainer">
+    <div>
+      <div className={styling.container}>
         <div className="myMissions">
           <h2>My Missions</h2>
           <div className="cardsContainer">
-            {displayMission ? <ul>{displayMission}</ul> : <p>No missions booked yet</p>}
+            {displayMission
+              ? <ul>{displayMission}</ul>
+              : <p>No missions booked yet</p>}
           </div>
         </div>
-        <div className="myRockets">
+        <div className="myRocket">
           <h2>My Rockets</h2>
-          <div className="cardsContainer">{}</div>
+          <div className="cardsContainer">
+            {bookedRocket.filter((rocket) => rocket.reserved === true).length > 0 ? (
+              bookedRocket.filter((rocket) => rocket.reserved === true).map((rocket) => (
+                <ul key={rocket.id} className={styling.listing}>
+                  <li key={rocket.id}>
+                    <span>{rocket.name}</span>
+                  </li>
+                </ul>
+              ))
+            ) : <p>No rockets have been reserved</p>}
+          </div>
         </div>
       </div>
     </div>
