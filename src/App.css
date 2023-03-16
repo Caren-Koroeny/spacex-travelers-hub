@@ -35,9 +35,20 @@
 }
 
 .cardsContainer {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  margin-top: 20px;
+  border: 1px solid grey;
+  border-collapse: collapse;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+
+.cardsContainer  {
+  border: 1px solid grey;
+  border-radius: 10px;
+  padding: 1rem 8rem;
+  margin: 0.5rem 0;
+}
+
+.cardsContainer li {
+  display: table-row;
 }
